@@ -1,0 +1,68 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include<conio.h>
+
+#define PROGRAM " Calculette SA "
+#define VERSION " 1.0"
+#define DATE    " 13/04/11 "
+#define AUTHOR  " COUDERC Stephane "
+' Auteur : COUDERC Stephane 07/2016
+
+long Datation (long j, long m, long a) ; //PROTOTYPE DU S/P
+/*------------------------------------------------------------------*/
+void main(void)
+{
+  printf (" Saisir les dates au format JJ MM AAAA ") ;
+long j, m, a, n, n1 ; //5 variables locales pour cette fct exckusivement
+  system ("color A");
+
+  // clrscr() ;
+  printf ("\nEntrer date de debut de grossesse : ") ; scanf ("%ld%ld%ld", &j, &m, &a) ;
+
+  n = Datation (j, m, a) ;  //APPEL DU S/P
+
+  n1 = n ;
+
+  printf ("\nEntrer date de prelevement: ") ; scanf ("%ld%ld%ld", &j, &m, &a) ;
+
+  n = Datation (j, m, a) ;  //APPEL DU S/P
+
+  //printf ("\nNbr de jours = %ld", n-n1) ;
+
+  double joursam = 0;
+  joursam = n-n1;
+
+  double sam = 0;
+sam = joursam/7;
+
+  double entsam = 0;
+entsam = floor (sam) ;
+
+  double valvirg = 0;
+  valvirg = sam-entsam;
+
+  double base7 = 0;
+  base7 = valvirg*7;
+
+long valsa = 0;
+printf ( "\n-------------------------------");
+printf ( "\n Soit Valeur en SA : %.0f,%.0f ", entsam+2 , base7) ;
+getch();
+}
+
+/*------------------------------------------------------------------*/
+long Datation (long j, long m, long a) //DEFINITION COMPLETE DU S/P
+{
+long n ;  //variable locale pour cette fct exckusivement
+
+  n = a*365 + (m-1)*31 + j ;
+  if (m <= 2) a-- ;
+  n = n + a/4 - a/100 + a/400 ;
+  if (m > 2) n = n - (int)((m-1)*0.4+2.7) ;
+
+
+  return n ;
+
+
+}
