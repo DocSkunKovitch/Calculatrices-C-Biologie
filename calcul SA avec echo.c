@@ -3,20 +3,12 @@
 #include <math.h>
 #include<conio.h>
 
-
-
 #define PROGRAM " Calculette SA LCC"
 #define VERSION " 2.0"
 #define DATE    " 15/04/11"
 #define AUTHOR  " Stephane Couderc "
 
 // Auteur : COUDERC Stephane 04/11
-
-//Les programmes suivants sont, selon l'article L121-1 du Code De La Propriété Intellectuelle,
-//la propriété de leurs auteurs respectifs, toute reproduction (même partielle) est interdite
-// sur tout support sans autorisation écrite préalable de l'auteur.
-// Any reproduction  - either whole or partial -
-// is strictly prohibited without the written agreement of the author.
 
 long Datation (long j, long m, long a) ; //PROTOTYPE DU S/P
 /*------------------------------------------------------------------*/
