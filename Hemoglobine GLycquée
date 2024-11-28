@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+#define PROGRAM "Hemoglobine Glyquée"
+#define VERSION "v0.1a"
+#define DATE    "22.12.2011"
+#define AUTHOR  "S.Couderc"
+
+double main()
+
+{
+
+int continuer = 1;
+   while (continuer)
+
+{
+
+  system (" cls ");
+        system ("color f");
+
+    // Tel que : - ( NGSP A1c ) = 0.9148 ( IFCC A1c ) + 2.152
+    //           - ( IFCC A1c ) = 1.093 ( NGSP A1c ) - 2.350
+
+double titre;
+    printf (" Convertisseur Normes Hemoglobine Glyquee \n\n");
+
+    double valini = -1;
+    printf("\n Valeur a convertir ( Entrer les valeurs en pourcentage )  :   ");
+    scanf ("%lf", &valini);
+
+
+double ifcc = 1;
+ifcc = 0.9148 * valini + 2.152;
+
+double ngsp = 1;
+ngsp = 1.093 *  valini - 2.350;
+
+double ngsp10 = 1;
+ngsp10 = ngsp * 10;
+
+    double recap = 1 ;
+    printf (" \n---------------------------------------\n\n");
+    printf (" Valeur NGSP A1c  : %.1f Pourcents \n", ifcc);
+    printf (" Valeur IFCC A1c : %.1f Pourcents soit %.lf mmol/mol \n\n\n", ngsp, ngsp10 );
+
+system ("pause");
+
+}
+continuer = 0;
+
+return 0;
+}
+
+
