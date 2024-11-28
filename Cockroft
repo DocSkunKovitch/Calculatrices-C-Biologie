@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+#define PROGRAM "Cockcroft"
+#define VERSION "v0.1a"
+#define DATE    "22.04.2011"
+#define AUTHOR  "Stephane Couderc"
+
+double main()
+
+{
+
+int continuer = 1;
+   while (continuer)
+
+{
+
+  system (" cls ");
+        system ("color f");
+
+    // Tel que : [( 140 - Age ) x poids x K / creatine µmol/l ]
+    // K = 1.25 chez l'homme  / K= 1 chez la femme
+    double titre;
+    printf (" Clairance de la creatinine - Formule de Cockcroft \n\n");
+
+    double age = -1;
+    printf("\n Age du patient :   ");
+    scanf ("%lf", &age);
+
+    double poids = -1;
+    printf(" Poids du patient :   ");
+    scanf ("%lf", &poids);
+
+    double creat = -1; // en µmol/l
+    printf(" Valeur Creatinine en Micromol/l :   ");
+    scanf ("%lf", &creat);
+
+
+double formH = 1;
+formH = (140 - age) * poids * 1.23 / creat;
+
+double formF = 1;
+formF = (140 - age) * poids * 1.04 / creat;
+
+    double recap = 1 ;
+    printf (" \n---------------------------------------\n\n");
+    printf (" Resultat pour un homme  : %.3f ml/min \n", formH);
+    printf (" Resultat pour une femme : %.3f ml/min \n", formF);
+
+system ("pause");
+
+}
+continuer = 0;
+
+return 0;
+}
+
