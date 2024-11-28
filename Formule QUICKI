@@ -1,0 +1,63 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+#define PROGRAM " QUICKI "
+#define VERSION "v0.1a"
+#define DATE    "22.04.2011"
+#define AUTHOR  "Stephane Couderc"
+
+double main()
+
+{
+
+int continuer = 1;
+   while (continuer)
+
+
+{
+
+  system (" cls ");
+        system ("color f");
+
+    // Q = 1 / log(insuline) + log (glucose)
+
+    double titre;
+    printf (" Test de QUICKI \n\n");
+
+    double insuline = -1;
+    printf("\n Valeur Insuline en microU/ml :   ");
+    scanf ("%lf", &insuline);
+
+    double glucose = -1;
+    printf(" Valeur Glucose en g/l:   ");
+    scanf ("%lf", &glucose);
+
+    double logins = -1;
+    logins = log10(insuline);
+
+    double logglu = -1;
+    logglu = log10(glucose*100);
+
+double formule = -1;
+formule = 1 / (logins + logglu );
+printf (" QUICKI = %.5f \n" , formule);
+
+
+
+
+
+  //  double recap = 1 ;
+    //printf (" \n---------------------------------------\n\n");
+    //printf (" Resultat pour un homme  : %.3f ml/min \n", formH);
+    //printf (" Resultat pour une femme : %.3f ml/min \n", formF);
+
+system ("pause");
+
+}
+continuer = 0;
+
+return 0;
+}
+
+
