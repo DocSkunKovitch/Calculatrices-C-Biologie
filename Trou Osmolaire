@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+#define PROGRAM "Trou Osmolaire"
+#define VERSION "v0.1a"
+#define DATE    "13.12.2011"
+#define AUTHOR  "Stephane Couderc"
+
+double main()
+
+{
+
+int continuer = 1;
+   while (continuer)
+
+{
+
+  system (" cls ");
+        system ("color f");
+
+    // Tel que : [290 - ( 20 x ( Sodium/100g + Potassium/100g ) ]
+
+    double titre;
+    printf (" Calcul du Trou Osmolaire \n\n");
+
+    double sodium = -1;
+    printf("\n Valeur Sodium ( en mmol/100g ):   ");
+    scanf ("%lf", &sodium);
+
+    double potas = -1;
+    printf(" Valeur Potassium ( en mmol/100g ) :   ");
+    scanf ("%lf", &potas);
+
+
+double calcul = 1;
+calcul = 290 - ( 20 * ( sodium + potas ));
+
+
+    double recap = 1 ;
+    printf (" \n---------------------------------------\n\n");
+    printf (" Valeur Trou Osmolaire : %.3f \n\n\n", calcul);
+
+
+system ("pause");
+
+}
+continuer = 0;
+
+return 0;
+}
+
